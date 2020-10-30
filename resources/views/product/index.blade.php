@@ -22,7 +22,7 @@
         <td>{{$product->name}}</td>
         <td>{{$product->price}}</td>
         <td>
-            <a href="" class="btn btn-success">Edit</a>
+            <a href="{{url('products/edit/'.$product->id)}}" class="btn btn-success">Edit</a>
             <a href="{{url('products/delete/'.$product->id)}}" class="btn btn-danger">Delete</a>
         </td>
     </tr>

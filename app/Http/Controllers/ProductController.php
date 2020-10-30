@@ -44,12 +44,23 @@ class ProductController extends Controller
  
     public function edit($id)
     {
-        //
+        $product =  Product::find($id);
+        return view('product.edit',compact('product'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        // Product::where('id',$id)->update([
+        //     'name' => $request->name,
+        //     'price' => $request->price
+        // ]);
+
+        Product::find($id)->update([
+                 'name' => $request->name,
+                 'price' => $request->price
+         ]);
+
+        return redirect()->route('products');
     }
 
    
